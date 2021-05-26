@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://dynamic-ui/./src/index.js"],"names":[],"mappings":";;;;;AAAA,6B","file":"main.js","sourcesContent":["console.log('Hello Webpack');"],"sourceRoot":""}
