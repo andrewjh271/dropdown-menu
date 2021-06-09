@@ -3,7 +3,7 @@ var __webpack_exports__ = {};
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-console.log('Hello Webpack');
+console.log('Initial configuration');
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
