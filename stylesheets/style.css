@@ -15,7 +15,6 @@ body {
 }
 
 .menu {
-  list-style-type: none;
   margin: 0;
   padding: 5px;
   color: #475480;
@@ -46,7 +45,8 @@ body {
   display: inline-block;
   margin: 0 10px;
 }
-.menu > li div, .menu > li h1 {
+.menu > li div,
+.menu > li h1 {
   border-left: 2px solid transparent;
 }
 .menu > li li,
@@ -58,7 +58,6 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  height: auto;
   max-height: 0;
   overflow: hidden;
 }
@@ -68,13 +67,8 @@ body {
 }
 .menu > li:hover > * {
   border-left: 2px solid #629cf3;
-  opacity: 1;
   cursor: pointer;
   background-color: #f0e7ff;
-}
-.menu > li:hover > * ul {
-  transform: none;
-  height: inherit;
 }
 .menu > li:hover > ul {
   max-height: 700px;
