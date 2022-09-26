@@ -1,6 +1,4 @@
-$menu-color-main: #475480;
-$dropdown-color: #f0e7ff;
-$dropdown-highlight: #629cf3;
+@use 'menu';
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -16,77 +14,4 @@ body {
   background-image: linear-gradient(45deg, #ececec, #ffffff);
   padding: 0;
   margin: 0;
-}
-
-.menu {
-  margin: 0;
-  padding: 5px;
-  color: $menu-color-main;
-
-  a {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    color: inherit;
-  }
-
-  .title {
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-    color: $menu-color-main;
-
-    a {
-      color: $menu-color-main;
-
-      &:hover {
-        color: $dropdown-highlight;
-      }
-    }
-
-    &:hover {
-      background-color: inherit;
-      border-left: 2px solid transparent;
-    }
-  }
-
-  & > li {
-    display: inline-block;
-    margin: 0 10px;
-
-    div,
-    h1 {
-      border-left: 2px solid transparent;
-    }
-
-    li,
-    div {
-      padding: 9px;
-    }
-
-    ul {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      max-height: 0;
-      overflow: hidden;
-
-      li:hover {
-        color: white;
-        background-color: $dropdown-highlight;
-      }
-    }
-  }
-
-  & > li:hover > * {
-    border-left: 2px solid $dropdown-highlight;
-    cursor: pointer;
-    background-color: $dropdown-color;
-  }
-
-  & > li:hover > ul {
-    max-height: 700px;
-    transition: max-height 0.9s;
-  }
 }
