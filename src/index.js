@@ -1,1 +1,1 @@
-console.log('Initial configuration');
+import './menu';

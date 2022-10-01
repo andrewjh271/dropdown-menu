@@ -4,10 +4,23 @@ $dropdown-highlight: #629cf3;
 $spacing-base: 9px;
 $max-height: 700px;
 
+$hamburger-padding-x: 18px !default;
+$hamburger-padding-y: 5px !default;
+$hamburger-layer-width: 25px !default; // default = 40px
+$hamburger-layer-height: 2.5px !default; // default = 4px
+$hamburger-layer-color: $menu-color-main !default;
+// comment out hamburger types that are unneeded (node_modules/hamburgers/_sass/hamburgers/hamburgers.scss)
+
+@import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
+
 .menu {
   margin: 0;
   padding: 0;
   color: $menu-color-main;
+
+  & > * {
+    display: inline-block;
+  }
 
   a {
     text-decoration: none;
@@ -19,12 +32,8 @@ $max-height: 700px;
   .title {
     padding: 0 $spacing-base;
     color: $menu-color-main;
-
-    h1 {
-      font-size: 30px;
-      margin: 0;
-      padding: 0;
-    }
+    font-size: 30px;
+    margin: 0;
 
     a {
       color: $menu-color-main;
@@ -33,28 +42,15 @@ $max-height: 700px;
         color: $dropdown-highlight;
       }
     }
-
-    &:hover > * {
-      background-color: inherit;
-      border-left: 2px solid transparent;
-    }
   }
 
-  & > li {
-    display: inline-block;
+  .dropdown {
     margin: 0 $spacing-base;
+    display: inline-block;
 
-    div,
-    h1 {
+    .dropdown-header {
       border-left: 2px solid transparent;
-    }
-
-    div {
-      padding: calc($spacing-base * 1.7) $spacing-base;
-    }
-
-    li {
-      padding: $spacing-base;
+      padding: calc($spacing-base * 2) $spacing-base;
     }
 
     ul {
@@ -65,21 +61,94 @@ $max-height: 700px;
       max-height: 0;
       overflow: hidden;
 
-      li:hover {
-        color: white;
-        background-color: $dropdown-highlight;
+      li {
+        min-width: 130px;
+        padding: $spacing-base;
+
+        &:hover {
+          color: white;
+          background-color: $dropdown-highlight;
+        }
       }
+    }
+
+    &:hover > * {
+      border-left: 2px solid $dropdown-highlight;
+      cursor: pointer;
+      background-color: $dropdown-color;
+    }
+
+    &:hover > ul {
+      max-height: $max-height;
+      transition: max-height 0.9s;
     }
   }
 
-  & > li:hover > * {
-    border-left: 2px solid $dropdown-highlight;
-    cursor: pointer;
-    background-color: $dropdown-color;
+  .hamburger {
+    height: 40px;
+    display: none;
   }
 
-  & > li:hover > ul {
-    max-height: $max-height;
-    transition: max-height 0.9s;
+  @media (max-width: 800px) {
+    .hamburger {
+      display: inline-block;
+    }
+
+    .dropdown-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(45vw, 1fr));
+      min-height: 90vh;
+      max-width: 90vw;
+      padding-top: 20px;
+      background-color: $dropdown-color;
+      transform: translateX(-800px);
+      transition: 0.15s;
+      position: absolute;
+    }
+
+    .dropdown-container.hide-mobile {
+      display: none;
+    }
+
+    .dropdown-container.is-active {
+      transform: translateX(0);
+    }
+
+    .hamburger.is-active {
+      background-color: $dropdown-color;
+    }
+
+    .hamburger.flash {
+      background-color: $dropdown-highlight;
+    }
+
+    .dropdown {
+      &:hover > * {
+        cursor: inherit;
+      }
+
+      ul {
+        max-height: $max-height;
+        position: relative;
+        padding-left: $spacing-base;
+
+        li:hover {
+          color: $dropdown-highlight;
+          background-color: inherit;
+        }
+      }
+
+      .dropdown-header {
+        border-left: none;
+        padding: $spacing-base;
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      &:hover > * {
+        border-left: none;
+        background-color: inherit;
+      }
+    }
   }
 }
