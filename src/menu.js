@@ -1,3 +1,5 @@
+import "../sass/menu.scss";
+
 const hamburger = document.querySelector('.hamburger');
 const dropdownContainer = document.querySelector('.dropdown-container');
 
