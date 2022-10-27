@@ -1,4 +1,4 @@
-# @andrewjh271/menu v1.0.0
+# @andrewjh271/menu v1.0.1
 
 A responsive dropdown menu. View example usage [here](https://andrewjh271.github.io/dropdown-menu/).
 
@@ -49,13 +49,11 @@ Follow markup structure:
 </ul> 
 ```
 
-Comment out unused Hamburger types in `node_modules/hamburgers/_sass/hamburgers/hamburgers.scss`
-
 ### Customization
 
 Variables in sass/menu.scss:
 
-```sass
+```scss
 $menu-color-main: #475480;
 $dropdown-color: #f0e7ff;
 $dropdown-highlight: #629cf3;
