@@ -9,7 +9,6 @@ $hamburger-padding-y: 5px !default;
 $hamburger-layer-width: 25px !default; // default = 40px
 $hamburger-layer-height: 2.5px !default; // default = 4px
 $hamburger-layer-color: $menu-color-main !default;
-// comment out hamburger types that are unneeded (node_modules/hamburgers/_sass/hamburgers/hamburgers.scss)
 
 @import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
 
