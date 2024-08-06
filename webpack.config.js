@@ -8,7 +8,7 @@ module.exports = {
     publicPath: "/dist/",
   },
   devServer: {
-    watchContentBase: true,
+    static: './dist',
   },
   module: {
     rules: [
