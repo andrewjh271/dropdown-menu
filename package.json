@@ -1,6 +1,6 @@
 {
   "name": "@andrewjh271/menu",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Dropdown responsive menu",
   "homepage": "https://github.com/andrewjh271/dropdown-menu",
   "main": "dist/main.js",
