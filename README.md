@@ -77,7 +77,7 @@ Variables in sass/menu.scss or stylesheets/menu.css
 
 If  you are using Sass, these variables are customizable as well:
 
-```sass
+```scss
 $hamburger-padding-x: 18px !default;
 $hamburger-padding-y: 5px !default;
 $hamburger-layer-width: 25px !default; // default = 40px
